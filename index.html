@@ -1,1 +1,33 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webapp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <script type="text/javascript">
+    Telegram.WebApp.ready();
+    Telegram.WebApp.MainButton.setText('Record').show().onClick(function () {
+        const data = JSON.stringify({hex: transaction.fname, lname: transaction.lname});
+        Telegram.WebApp.sendData(data);
+        Telegram.WebApp.close();
+    });
+  </script>
+  <body>
+    <h2>HTML Forms</h2>
+
+    <form id="transaction" name="transaction">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+
+  </body>
+  <script type="text/javascript">
+    Telegram.WebApp.expand();
+  </script>
+</html>
+
+
