@@ -9,7 +9,7 @@
   <script type="text/javascript">
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Record').show().onClick(function () {
-        const data = JSON.stringify({hex: transaction.fname, lname: transaction.lname});
+        const data = JSON.stringify({fname: fname, lname: body.transaction.lname});
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
