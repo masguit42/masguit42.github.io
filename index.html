@@ -6,8 +6,13 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </head>
   
+  <p id="demo"></p>
+  
   <script type="text/javascript">
     Telegram.WebApp.ready();
+    
+    document.getElementById("demo").innerHTML = Telegram.WebApp.initData;
+    
     Telegram.WebApp.MainButton.setText('Record').show().onClick(function () {
         const data = JSON.stringify(
           {
