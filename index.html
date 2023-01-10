@@ -9,7 +9,13 @@
   <script type="text/javascript">
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Record').show().onClick(function () {
-        const data = JSON.stringify({fname: document.querySelector("input#fname").value, lname: document.querySelector("input#lname").value});
+        const data = JSON.stringify(
+          {
+            description: document.querySelector("input#description").value, 
+            amount: document.querySelector("input#amount").value,
+            currency: document.querySelector("select#ddlViewBy").value,
+          }
+        );
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
@@ -19,10 +25,16 @@
     <h2>HTML Forms</h2>
 
     <form id="transaction" name="transaction">
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="John"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <label for="description">Description:</label><br>
+      <input type="text" id="description" name="description", value="Новая транзакция"><br>
+      <label for="amount">Amount:</label><br>
+      <input type="number" id="amount" name="amount" value="0"><br><br>
+      <label for="currency">Currency:</label><br>
+      <select id="ddlViewBy">
+        <option value="RUR">🇷🇺 RUR[₽]</option>
+        <option value="EUR" selected="selected">🇪🇺 EUR[€]</option>
+        <option value="USD">🇺🇸 USD[$]</option>
+      </select>
     </form> 
   </body>
   
