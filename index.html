@@ -11,7 +11,7 @@
   <script type="text/javascript">
     Telegram.WebApp.ready();
     
-    document.getElementById("demo").innerHTML = Telegram.WebApp.initData;
+    document.getElementById("demo").innerHTML = Telegram.WebApp.initDataUnsafe;
     
     Telegram.WebApp.MainButton.setText('Record').show().onClick(function () {
         const data = JSON.stringify(
